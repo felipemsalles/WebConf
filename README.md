@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+## WebConf
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+WebConf is a dynamic platform developed using React Native, designed to empower the tech community by providing a space to rate and review events, conferences, and talks. This user-friendly website aims to streamline the process of discovering high-quality tech events while fostering a collaborative environment for sharing experiences and insights.
 
-Currently, two official plugins are available:
+Key Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Event Ratings and Reviews: Users can rate events on a scale and provide detailed reviews, helping others make informed decisions about which conferences to attend.
 
-## Expanding the ESLint configuration
+- Search and Filter: An intuitive search function allows users to easily find events by category, date, location, or popularity, ensuring they can discover the most relevant conferences and talks.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- User Profiles: Users can create personalized profiles, track their event attendance, and showcase their contributions through reviews and ratings.
 
-- Configure the top-level `parserOptions` property like this:
+- Interactive Community: WebConf encourages engagement by allowing users to comment on reviews, share experiences, and connect with fellow attendees.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Event Insights: Data analytics provide insights into event popularity and user preferences, enabling organizers to improve future events based on feedback.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Technologies Used:
+
+- React Native: For building a cross-platform mobile application that delivers a seamless user experience on both iOS and Android devices.
+
+- RESTful API: To facilitate communication between the frontend and backend, enabling smooth data retrieval and submission.
+
+- Target Audience: WebConf targets tech enthusiasts, professionals, and event organizers who seek to enhance their conference experience through shared knowledge and insights. By connecting users with valuable information about tech events, WebConf aims to foster a vibrant and informed community.
