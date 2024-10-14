@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - WebConf</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/all.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target="#navbar-example">
+
+    <!-- Navbar -->
+    <nav id="navbar-example" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">WebConf</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="eventos.html">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Eventos</li>
+                    </ol>
+                </nav>
+                <h2 id="eventos" class="text-center mb-4">Próximos Eventos</h2>
+                <p>Aqui estão os próximos eventos de computação agendados:</p>
+                <ul id="event-list" class="list-group">
+                    <!-- Lista de eventos será gerada dinamicamente aqui -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery-3.3.1.js"></script>
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script>
+        // Array de objetos representando os eventos
+        const eventos = [
+            { nome: 'SBSEG', data: '10 de setembro de 2024', descricao: 'Evento de Segurança da Informação' },
+            { nome: 'SBCAS', data: '15 de junho de 2024', descricao: 'Evento de Computação Aplicada à Saúde' },
+            { nome: 'SBSI', data: '20 de julho de 2024', descricao: 'Evento de Sistemas de Informação' },
+            
+        ];
+
+        // Gerar a lista de eventos dinamicamente
+        const eventList = document.getElementById('event-list');
+        eventos.forEach(evento => {
+            const item = `
+                <li class="list-group-item">
+                    <a href="#evento-${evento.nome}" data-toggle="popover" title="${evento.nome}" data-content="${evento.descricao}">
+                        ${evento.nome} - ${evento.data}
+                    </a>
+                </li>
+            `;
+            eventList.insertAdjacentHTML('beforeend', item);
+        });
+
+        // Ativar os popovers
+        $('[data-toggle="popover"]').popover({
+            trigger: 'hover'
+        });
+    </script>
+</body>
+</html>

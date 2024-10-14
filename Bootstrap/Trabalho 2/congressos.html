@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congressos - WebConf</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/all.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+
+    <!-- Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h2 class="text-center mb-4">Próximos Congressos</h2>
+                <p>Aqui estão os próximos congressos de computação agendados:</p>
+                <ul id="congress-list" class="list-group">
+                    <!-- Lista de congressos será gerada dinamicamente aqui -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery-3.3.1.js"></script>
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script>
+        // Array de objetos representando os congressos
+        const congressos = [
+            { nome: 'SBSEG', mes: 8, categoria: 'Segurança' }, // Setembro
+            { nome: 'SBCAS', mes: 5, categoria: 'Sistemas' },  // Junho
+            { nome: 'SBSI',  mes: 6, categoria: 'Saúde' },     // Julho
+            { nome: 'CSBC',  mes: 7, categoria: 'Geral' }      // Agosto
+        ];
+
+        // Função para comparar as datas e organizar os congressos por ordem de proximidade
+        congressos.sort((a, b) => a.mes - b.mes);
+
+        // Função para calcular os dias restantes para o início do evento
+        function calcularDiasRestantes(mes) {
+            const hoje = new Date();
+            const inicioMesEvento = new Date(hoje.getFullYear(), mes, 1);
+            const diferenca = inicioMesEvento - hoje;
+            const diasRestantes = Math.ceil(diferenca / (1000 * 60 * 60 * 24));
+            return diasRestantes;
+        }
+
+        // Gerar a lista de congressos dinamicamente
+        const congressList = document.getElementById('congress-list');
+        congressos.forEach(congresso => {
+            const diasRestantes = calcularDiasRestantes(congresso.mes);
+            const item = `
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${congresso.nome} - ${getMesName(congresso.mes)}
+                    <span class="badge badge-${getBadgeColor(congresso.categoria)} badge-pill">${congresso.categoria}</span>
+                    <span>${diasRestantes} dias restantes</span>
+                </li>
+            `;
+            congressList.insertAdjacentHTML('beforeend', item);
+        });
+
+        // Função auxiliar para obter o nome do mês
+        function getMesName(mes) {
+            const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+            return meses[mes];
+        }
+
+        // Função auxiliar para definir a cor do badge com base na categoria
+        function getBadgeColor(categoria) {
+            switch (categoria) {
+                case 'Segurança':
+                    return 'primary';
+                case 'Sistemas':
+                    return 'secondary';
+                case 'Saúde':
+                    return 'success';
+                case 'Geral':
+                    return 'warning';
+                default:
+                    return 'dark';
+            }
+        }
+    </script>
+</body>
+</html>

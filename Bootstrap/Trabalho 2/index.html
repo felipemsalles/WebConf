@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link href="assets/css/bootstrap.css" rel="stylesheet">
+   <link href="assets/css/all.css" rel="stylesheet">
+   <link href="assets/css/styles.css" rel="stylesheet">
+   <title>WebConf</title>
+</head>
+
+<body>
+   <nav class="navbar navbar-light bg-light navbar-expand-md fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="index.html"><img src="assets/images/logo-webconf.png" style="width: 90px;"
+               alt="WebConf"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu"
+            aria-expanded="false" aria-label="Botão de navegação">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="menu">
+            <div class="navbar-nav mr-auto">
+               <a class="nav-item nav-link" href="congressos.html">Congressos</a>
+               <a class="nav-item nav-link" href="eventos.html">Eventos</a>
+               <a class="nav-item nav-link" href="sobre.html">Sobre</a>
+               <div class="dropdown">
+                  <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                     Eventos Especiais
+                  </a>
+                  <div class="dropdown-menu">
+                     <a class="dropdown-item" href="#">Maratonas</a>
+                     <a class="dropdown-item" href="#">Hackathons</a>
+                     <a class="dropdown-item" href="#">Palestras Internacionais</a>
+                  </div>
+               </div>
+               <a class="nav-item nav-link" href="#ingressomodal" data-toggle="modal">Ingressos</a>
+
+               <a class="nav-item nav-link" href="contato.html">Contato</a>
+            </div>
+
+            <div class="navbar-nav">
+               <a class="nav-item nav-link" href="#meuseventos">Meus Eventos</a>
+               <a class="nav-item nav-link" href="#entrar">
+                  <i class="fas fa-sign-in-alt"></i> Entrar
+               </a>
+            </div>
+         </div>
+      </div>
+   </nav>
+<!--
+   <div class="bgimage d-none d-md-block mb-4" style="margin-top: 69px;"></div>
+-->
+   <div id="carousel-id" class="carousel slide d-none d-md-block mb-4"
+        style="margin-top: 69px;" data-ride="carousel" data-interval="3000">
+      <ol class="carousel-indicators">
+         <li data-target="#carousel-id" data-slide-to="0" class="active"></li>
+         <li data-target="#carousel-id" data-slide-to="1"></li>
+      </ol>  
+      <div class="carousel-inner">
+         <div class="carousel-item active">
+            <img src="assets/images/panoramica1.jpg" class="d-block w-100" style="height: 350px;">
+            <div class="carousel-caption" style="top: 70px;">
+               <div class="text-center">
+                  <span class="texto-1">Os Melhores Congressos e Eventos do Brasil</span><br>
+                  <span class="texto-2">Participe e se conecte com mais cientistas como você!</span><br>
+               </div>
+            </div>
+         </div>
+
+         <div class="carousel-item">
+            <img src="assets/images/panoramica2.jpg" class="d-block w-100" style="height: 350px;">
+            <div class="carousel-caption" style="top: 70px;">
+               <div class="text-center">
+                  <span class="texto-1">Parcele seus congressos e eventos em até 10 vezes sem juros!</span><br>
+               </div>
+            </div>
+         </div>
+      </div>   
+      
+      <a href="#carousel-id" class="carousel-control-prev" role="button" data-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true">
+            <span class="sr-only">Anterior</span>
+         </span>
+      </a>
+      <a href="#carousel-id" class="carousel-control-next" role="button" data-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true">
+            <span class="sr-only">Próximo</span>
+         </span>
+      </a>
+   </div> 
+
+   <div class="modal fade" id="reservamodal">
+      <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+            <div class="modal-header">
+               <span class="modal-title">Reserva de Congressos e Eventos</span>
+               <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <form action="">
+                  <fieldset class="form-group">
+                     <legend class="font-weight-bold">Informações Pessoais</legend>
+
+                     <div class="form-group row">
+                        <label for="nome" class="col-form-label col-lg-2">Nome</label>
+                        <div class="col-lg-10">
+                           <input type="text" name="nome"
+                                  class="form-control is-valid" 
+                                  placeholder="Nome" id="nome" >
+                        </div>
+                     </div>
+                     <div class="form-group row">
+                        <label class="col-form-label col-lg-2">Sexo</label>
+                        <div class="col-lg-10" style="padding-top: 7px;">
+                           <div class="form-check form-check-inline">
+                              <input type="radio" id="sexo-masc" name="sexo" 
+                                     value="M" class="form-check-input">
+                              <label for="sexo-masc" class="form-check-label">
+                                 Masculino
+                              </label>       
+                           </div>
+                           <div class="form-check form-check-inline">
+                              <input type="radio" id="sexo-fem" name="sexo" 
+                                     value="F" class="form-check-input">
+                              <label for="sexo-fem" class="form-check-label">
+                                 Feminino
+                              </label>       
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group row">
+                        <label for="endereco" class="col-form-label col-lg-2">Endereço</label>
+                        <div class="col-lg-10">
+                           <input type="text" id="endereco" name="endereco"
+                                  class="form-control is-invalid" placeholder="Endereço">
+                           <div class="invalid-feedback">
+                              Este campo deve ser informado.
+                           </div>       
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset class="form-group" style="margin-bottom: 0px;">
+                     <legend class="font-weight-bold">Informações do Congresso/Evento</legend>
+                     <div class="form-group row">
+                        <label for="passeio" class="col-form-label col-lg-2 text-left text-lg-right">Evento</label>
+                        <div class="col-lg-10">
+                           <select class="form-control" id="passeio" multiple>
+                              <option value="">-- Selecione um Congresso --</option>
+                              <option value="">SBRC24</option>
+                              <option value="">SBCAS24</option>
+                              <option value="">SBSI24</option>
+                              <option value="">CSBC24</option>
+                              <option value="">BRACIS24</option>
+                           </select>
+                        </div>
+                     </div>
+                     <div class="form-group row">
+                        <label for="senha" class="col-form-label col-lg-2 text-left text-lg-right">Evento</label>
+                        <div class="col-lg-10">
+                           <div class="form-check">
+                              <input type="checkbox" class="form-check-input" 
+                                     name="sbseg" id="sbseg">
+                              <label class="form-check-label" for="ilha">
+                                 SBSEG 24
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input type="checkbox" class="form-check-input"
+                                     name="sbcas" id="sbcas">
+                              <label class="form-check-label" for="sbcas">
+                                 SBCAS 24
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input type="checkbox"  class="form-check-input"
+                                     name="sbsi" id="sbsi">
+                              <label class="form-check-label" for="sbsi">
+                                 SBSI 24
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+                  <div class="form-group row">
+                     <div class=" col-lg-10 offset-lg-2">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                           Enviar
+                        </button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="container">
+      <div class="jumbotron d-block d-md-none text-center mb-4" style="margin-top: 89px;">
+         <h5>Organização especializada em congressos e eventos no Brasil.</h5>
+         <br>
+         <h5>Veja abaixo os congressos mais esperados pelos cientistas.</h5>
+      </div>
+
+      <h4 id="eventos"mb-3">Nossos Eventos</h4>
+      
+      <div class="row mb-4">
+         <div class="col-lg-4 col-md-6">
+            <div class="card mb-3">
+               <img src="assets/images/p-palestrasorg.jpg" alt="Palestras da Organização">
+               <div class="card-body">
+                  <div class="text-center">
+                     <h5 class="card-title">Palestras da Organização</h5>
+                     <p class="text-warning font-weight-bold">Eventos mensais</p>
+                  </div>
+                  <p class="card-text text-justify">
+                     Os eventos da WebConf acontecem por todo Brasil. As principais palestras da nossa Organização acontecem nas principais universidades federais do país. Os eventos
+                     também são transmitidos de forma online.</p>
+               </div>
+               <div class="card-footer text-right">
+                  <button class="btn btn-outline-primary">Mais informações...</button>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6">
+            <div class="card mb-3">
+               <img src="assets/images/p-hackathons.jpg" alt="Hackathons">
+               <div class="card-body">
+                  <div class="text-center">
+                     <h5 class="card-title">Hackathons da Organização</h5>
+                     <p class="text-warning font-weight-bold">Eventos mensais</p>
+                  </div>
+                  <p class="card-text text-justify">
+                     Os Hackathons são eventos oferecidos para preparar e desafiar potenciais cientistas para a vida acadêmica propondo desafios em grupo para solucionar problemas em alta na área de Computação. Veja os
+                     <a href="#"
+                        onclick="return false;"
+                        data-trigger="hover"
+                        data-toggle="tooltip" 
+                        data-placement="top"
+                        data-html="true"
+                        title="<b>Hackathon:</b><br>
+                               Rio<br>
+                               São Paulo<br>
+                               Recife<br>
+                               Porto Alegre">
+                        "Locais"
+                     </a>   
+                     e venha participar!
+                  </p>
+               </div>
+               <div class="card-footer text-right">
+                  <button class="btn btn-outline-primary">Mais informações...</button>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6">
+            <div class="card mb-3">
+               <img src="assets/images/p-palestras.jpg" alt="Congressos">
+               <div class="card-body">
+                  <div class="text-center">
+                     <h5 class="card-title">Congressos da SBC</h5>
+                     <p class="text-warning font-weight-bold">Eventos mensais</p>
+                  </div>
+                  <p class="card-text text-justify">
+                     Entre as principais conferências do país, os eventos da SBC também fazem parte da WebConf. Aqui você pode garantir seu ingresso por um preço acessível e participar dos eventos da SBC.</p>
+               </div>
+               <div class="card-footer text-right">
+                  <button class="btn btn-outline-primary">Mais informações...</button>
+               </div>
+            </div>
+         </div>
+
+      <h4 class="mb-3" id="eventos">Eventos em destaque</h4>
+      
+      <div class="accordion mb-4" id="id-accordion">
+         <div class="card">
+            <div class="card-header" id="id-header-congressos">
+               <h5 class="mb-0">
+                  <a href="#id-congressos" data-toggle="collapse"
+                     aria-expanded="true" 
+                     aria-controls="id-ilha">
+                     Congressos
+                  </a>
+               </h5>
+            </div>
+            <div id="id-congressos" class="collapse show"
+                 data-parent="#id-accordion"
+                 aria-labelledby="id-header-congressos">
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col-lg-6">
+                        <div class="media">                                          
+                           <img src="assets/images/sbseg24.jpg" alt="SBSeg24">
+                           <div class="media-body">
+                              <h5>SBSeg24</h5>
+                              <span class="texto-media-body">É o principal congresso de Segurança da Informação do Brasil.
+                                 São oferecidas palestras, minicursos, etc.</span>
+                           </div>   
+                        </div>   
+                     </div>   
+                     <div class="col-lg-6">
+                        <div class="media">                                       
+                           <img class="img-fluid" src="assets/images/sbcas24.jpg" alt="SBCAS24">
+                           <div class="media-body">
+                              <h5>SBCAS24</h5>
+                              <span class="texto-media-body">É o principal congresso de Computação Aplicada à Saúde. Oferece palestras, minucursos e muito networking!</span>
+                           </div>   
+                        </div>   
+                     </div>   
+                     <div class="col-lg-6">
+                        <div class="media">                                       
+                           <img src="assets/images/sbsi24.jpg" alt="SBSI24">
+                           <div class="media-body">
+                              <h5>SBSI24</h5>
+                              <span class="texto-media-body">É o principal congresso de Sistemas de Informação do país.
+                                 Esta edição será focada nas perspectivas e tendências dos Sistemas de Informação na Agricultura Digital.</span>
+                           </div>   
+                        </div>   
+                     </div>   
+                     <div class="col-lg-6">
+                        <div class="media">                                           
+                           <img src="assets/images/csbc24.jpg" alt="CSBC24">
+                           <div class="media-body">
+                              <h5>CSBC24</h5>
+                              <span class="texto-media-body">É o maior congresso de computação e TI da América Latina. O CSBC apresenta dezenas de sub-eventos colocados, com centenas de trabalhos submetidos/aprovados de milhares de cientistas.</span>
+                           </div>   
+                        </div>   
+                     </div>   
+                  </div>
+                  <button class="btn btn-outline-primary btn-block">Mais Informações</button>
+                  <a class="btn btn-outline-secondary btn-block" href="cadastro.html">Inscreva-se!</a>
+               </div>
+            </div>
+         </div>
+         <div class="card">
+            <div class="card-header" id="id-header-palestrasvoluntárias">
+               <h5 class="mb-0">
+                  <a href="#id-palestrasvoluntarias" data-toggle="collapse"
+                     aria-expanded="true" 
+                     aria-controls="id-palestrasvoluntarias">
+                     Palestras Voluntárias
+                  </a>
+               </h5>
+            </div>
+            <div id="id-palestrasvoluntarias" class="collapse"
+                 data-parent="#id-accordion"
+                 aria-labelledby="id-header-palestrasvoluntárias">
+               <div class="card-body">
+                  
+                  <p>Nossas palestras voluntárias são conduzidas por especialistas renomados em suas respectivas áreas, garantindo que os participantes tenham acesso a informações de alta qualidade e insights de ponta. Além disso, encorajamos a participação ativa da comunidade estudantil, promovendo um diálogo aberto e construtivo entre palestrantes e alunos.</p>
+                  <div class="alert alert-info alert-dismissible fade show">
+                     <h4>Webconf: Promovendo Conhecimento e Colaboração em Universidades de Todo o País</h4>
+                     <button type="button"
+                             class="close"
+                             data-dismiss="alert"
+                             aria-label="Close">
+                        <span aria-hidden="true">&times;</span>      
+                     </button>
+                     <p class="mb-2">Ao participar das palestras da Webconf, os estudantes têm a oportunidade de não só expandir seus horizontes intelectuais, mas também de estabelecer conexões significativas com profissionais experientes e outros colegas de sua área de estudo. Acreditamos que essas interações podem catalisar o crescimento acadêmico e profissional, além de inspirar futuras colaborações e empreendimentos.
+
+                        Como parte de nosso compromisso com a responsabilidade social corporativa, a Webconf oferece essas palestras de forma gratuita, garantindo que o conhecimento de alta qualidade seja acessível a todos os estudantes, independentemente de sua situação financeira. Acreditamos que o acesso igualitário à educação e à informação é fundamental para promover uma sociedade mais justa e inclusiva.</p>
+                     <a class="alert-link" href="#">Participe!</a>
+               
+                     <p>Para mais informações sobre nossos próximos eventos e como se envolver, entre em contato conosco.</p>
+                  </div>               
+               </div>
+            </div>
+      </div>
+
+      <div class="jumbotron mb-4">
+         <h4 class="mb-3">Depoimentos sobre Eventos</h4>
+
+         <div class="row">
+            <div class="col-lg-6">
+               <blockquote class="blockquote">
+                  <p class="mb-0">"O evento da WebConf superou todas as minhas expectativas. Como estudante de Ciência da Computação, foi incrível ter a oportunidade de participar de um congresso tão bem organizado e com conteúdo de alto nível. As palestras foram inspiradoras e me deram uma visão mais ampla sobre as tendências e desafios da área. Além disso, a interação com outros participantes e palestrantes foi muito enriquecedora. Com certeza, esse evento contribuiu significativamente para o meu desenvolvimento profissional."</p>
+                  <footer class="blockquote-footer">
+                     Ana Rodrigues
+                  </footer>      
+               </blockquote>         
+            </div>                     
+
+            <div class="col-lg-6">
+               <blockquote class="blockquote">
+                  <p class="mb-0">"Participar do congresso organizado pela WebConf foi uma experiência enriquecedora. As palestras foram extremamente relevantes para o meu campo de atuação. A qualidade dos palestrantes e a diversidade de temas abordados realmente me impressionaram. Além disso, a organização do evento foi impecável, desde o processo de inscrição até a infraestrutura no local. Com certeza, pretendo participar novamente no próximo ano."</p>
+                  <footer class="blockquote-footer">
+                     Carlos Silva
+                  </footer>      
+               </blockquote>         
+            </div>                        
+
+            <div class="col-lg-6">
+               <blockquote class="blockquote">
+                  <p class="mb-0">"O evento da WebConf se destacou como um dos melhores eventos de computação que já participei. A qualidade das palestras e workshops foi excepcional, proporcionando oportunidades de networking para estabelecer novas parcerias e conhecer profissionais de alto impacto. Agradeço à equipe da WebConf pela excelência na organização e por oferecer um ambiente propício para o aprendizado e a troca de experiências. Mal posso esperar para participar novamente no próximo ano."</p>
+                  <footer class="blockquote-footer">
+                     Pedro Santos
+                  </footer>      
+               </blockquote>         
+            </div> 
+            <div class="col-lg-6">
+               <blockquote class="blockquote">
+                  <p class="mb-0">"Participar do evento da WebConf foi uma experiência transformadora para mim. As palestras foram incrivelmente informativas e me proporcionaram insights valiosos sobre as últimas inovações e tendências em tecnologia da informação. Além disso, os workshops práticos foram extremamente úteis para aprimorar minhas habilidades técnicas. Destaco também a qualidade da organização do evento, que garantiu uma experiência fluida e agradável para todos os participantes. Super recomendo!"</p>
+                  <footer class="blockquote-footer">
+                     Maria Oliveira
+                  </footer>      
+               </blockquote>         
+            </div>                        
+         </div>
+      </div>
+   </div>
+
+   <div class="footer footer-wide">
+      <div class="row">
+         <div class="col-xl-4 col-lg-3 col-sm-7">
+            <h5>Nossos Eventos</h5>
+            <ul class="list-unstyled">
+               <li><a href='#eventos'>Palestras Voluntárias</a></li>
+               <li><a href='#eventos'>Tutoriais Voluntários</a></li>
+            </ul>
+         </div>
+   
+         <div class="col-xl-3 col-lg-3 col-sm-5">
+            <h5>Congressos</h5>
+            <ul class="list-unstyled">
+               <li><a href='#'>SBSeg24</a></li>
+               <li><a href='#'>SBCAS24</a></li>
+               <li><a href='#'>SBSI24</a></li>
+               <li><a href='#'>CSBC24</a></li>
+               <li><a href='#'>BRACIS24</a></li>
+            </ul>
+         </div>
+   
+         <div class="col-xl-3 col-lg-3 col-sm-7">
+            <h5>Eventos Especiais</h5>
+            <ul class="list-unstyled">
+               <li><a href='#'>Maratonas</a></li>
+               <li><a href='#'>Hackathons</a></li>
+               <li><a href='#'>Palestras Internacionais</a></li>
+            </ul>
+         </div>
+   
+         <div class="col-xl-2 col-lg-3 col-sm-5">
+            <h5>Contato</h5>
+            <ul class="list-unstyled">
+               <li><i class="fas fa-user"></i> Suporte WebConf</li>
+               <li><i class="fas fa-phone"></i> (21)99999-9999</li>
+               <li><i class="fas fa-envelope-square"></i> <a href='mailto:webconf@gmail.com'>webconf@gmail.com</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <script src="assets/js/jquery-3.3.1.js"></script>
+   <script src="assets/js/popper.js"></script>
+   <script src="assets/js/bootstrap.js"></script>
+   <script src="assets/js/script.js"></script>
+</body>
+
+</html>

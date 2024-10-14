@@ -1,0 +1,35 @@
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f0f0f2;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #366273;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #366273b4;
+}
+
+a:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+div.error {
+  white-space: pre-line;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3 !important;
+}
